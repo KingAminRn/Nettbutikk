@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Nettbutikk.Models.NyBurkerM
+@{
+}
+@Html.Raw(ViewBag.msg)
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h1>Ny Bruker</h1>
+    <form>
+        <p>
+            <span> Ny Brukernavn<label>*</label></span>
+            <br />
+            @Html.EditorFor(NyBurkerM => NyBurkerM.Username, new { @htmlattributes = new { @class = "control-form" }})
+        </p>
+
+        <p>
+            <span>Ny Passord<label>*</label></span>
+            <br />
+            @Html.EditorFor(NyBurkerM => NyBurkerM.Password, new { @htmlattributes = new { @class = "control-form" }})
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </form>
+}

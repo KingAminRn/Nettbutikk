@@ -10,6 +10,7 @@
     <Compile Remove="Controllers\LogginnController.cs" />
     <Compile Remove="Controllers\login.cs" />
     <Compile Remove="Controllers\LoginController1.cs" />
+    <Compile Remove="Models\NyBrukerModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
