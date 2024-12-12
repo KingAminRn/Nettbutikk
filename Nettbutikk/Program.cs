@@ -13,7 +13,7 @@ namespace Nettbutikk
 
             // Configure the HTTP request pipeline.
             //test
-            
+            //noe
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
