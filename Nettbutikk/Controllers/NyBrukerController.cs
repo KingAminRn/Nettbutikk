@@ -15,7 +15,7 @@ namespace Nettbutikk.Controllers
         }
 
         [HttpGet]
-        public IActionResult Loginn()
+        public IActionResult Bruker()
         {
 
             return View();
