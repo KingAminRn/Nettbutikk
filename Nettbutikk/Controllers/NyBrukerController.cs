@@ -29,26 +29,11 @@ namespace Nettbutikk.Controllers
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
 
-            string qury = "insert into logininfo values brukernavn = '" + objBukerM.Username + "', passord = '" + objBukerM.Password + "'";
+            string qury = "insert into logininfo values ('" + objBukerM.Username + "', '" + objBukerM.Password + "')";
             SqlCommand cmd = new SqlCommand(qury, con);
+            cmd.ExecuteNonQuery();
 
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                if (Convert.ToInt32(dr.GetValue(0)) >= 1)
-                {
-                    ViewBag.msg = "<script>alert('Login er korrekt')</script>";
-
-                    return View();
-                }
-                else
-                {
-                    ViewBag.msg = ("<script>alert('Login er korrekt')</script>");
-                    //ViewBag.msg = "loginn feilet";
-                }
-            }
-
-            return View();
+            return View(objBukerM);
         }
 
 
